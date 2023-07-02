@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}">Memoir</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'featured' %}">Featured Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#footer">Contact Us</a>
+        </li>
+      </ul>
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="{% url 'logout' %}">Sign Out</a>
+        </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'register' %}">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'login' %}">Sign in</a>
+          </li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="nav-scroller py-1 mb-3 border-bottom">
+  <nav class="nav nav-underline justify-content-between">
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'world' %}">World</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'india' %}">India</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'technology' %}">Technology</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'design' %}">Design</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'culture' %}">Culture</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'business' %}">Business</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'politics' %}">Politics</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'opinion' %}">Opinion</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'science' %}">Science</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'health' %}">Health</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'style' %}">Style</a>
+    <a class="nav-item nav-link link-body-emphasis" href="{% url 'travel' %}">Travel</a>
+  </nav>
+</div>
